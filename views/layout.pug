@@ -13,7 +13,7 @@ html(lang='en')
     div
       nav(class="d-flex justify-content-between align-items-center px-4")
         div(class="d-flex")
-          h2 Members Only
+          h2(class="font-weight-bold") Members Only
           img(class="ml-2 logo" src="/images/logo.png" alt="logo")
         ul(class="d-flex align-items-center nav-links")
           if user
@@ -29,7 +29,7 @@ html(lang='en')
           else
             a(href="#" class="account-link login") Login
               i(class="fa-solid fa-right-from-bracket")
-            a(href="#" class="account-link sign-up") Sign up
+            a(href="#" class="account-link sign-up") Sign Up
               i(class="fa-solid fa-user-plus")
 
       div
