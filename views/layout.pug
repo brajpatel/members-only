@@ -1,12 +1,4 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-
-
-doctype html
 html(lang='en')
   head
     title= title
@@ -18,22 +10,26 @@ html(lang='en')
     script(src="https://kit.fontawesome.com/048208056e.js" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div(class='d-flex flex-column')
-      nav(class="d-flex justify-content-between align-items-center px-3")
-        h2 LOGO
+    div
+      nav(class="d-flex justify-content-between align-items-center px-4")
+        div(class="d-flex")
+          h2 Members Only
+          img(class="ml-2 logo" src="/images/logo.png" alt="logo")
         ul(class="d-flex align-items-center nav-links")
           if user
-            a(href="#")
+            a(href="#" class="action-link create-message")
               i(class="fa-solid fa-plus" title="Create a message")
-            a(href="#")
+            a(href="#" class="action-link become-member")
               i(class="fa-solid fa-crown" title="Become a member")
-            a(href="#") Sign Out
-              i(class="fa-solid fa-right-from-bracket")
+            div(class="position-relative profile-container")
+              div(class="profile")
+              a(href="#" class="account-link sign-out") Sign Out
+                i(class="fa-solid fa-right-from-bracket")
 
           else
-            a(href="#") Login
+            a(href="#" class="account-link login") Login
               i(class="fa-solid fa-right-from-bracket")
-            a(href="#") Sign up
+            a(href="#" class="account-link sign-up") Sign up
               i(class="fa-solid fa-user-plus")
 
       div
