@@ -4,4 +4,11 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    nav
+      if user
+        h1 User signed in, options: create message, become a member, sign output
+
+      else
+        h1 User signed out, options: login, sign up,
+
     block content
