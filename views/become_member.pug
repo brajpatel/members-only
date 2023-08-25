@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  if member
+  if user.account_status === "member"
     h1 You are already a member!
 
   else
