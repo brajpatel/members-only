@@ -22,11 +22,11 @@ html(lang='en')
               i(class="fa-solid fa-plus" title="Create a message")
             //- ONLY DISPLAY THIS LINK IF THE USER IS ===NOT=== A MEMBER
             if user.account_status === "none"
-              a(href="#" class="action-link become-member")
+              a(href="/account-status/become-a-member" class="action-link become-member")
                 i(class="fa-solid fa-crown" title="Become a member")
             //- ONLY DISPLAY THIS LINK IF THE USER IS A MEMBER AND ===NOT=== AN ADMIN
             if user.account_status === "member"
-              a(href="#" class="action-link become-admin")
+              a(href="/account-status/become-an-admin" class="action-link become-admin")
                 i(class="fa-solid fa-user-secret" title="Become an admin")
             div(class="position-relative profile-container")
               div(class="profile")
