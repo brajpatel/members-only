@@ -14,12 +14,16 @@ nav {
   min-height: 80px;
 }
 
+nav h2,
+.nav-links {
+  margin: 0;
+}
+
 .logo {
   height: 35px;
 }
 
 .nav-links {
-  margin: 0;
   gap: 1rem;
 }
 
