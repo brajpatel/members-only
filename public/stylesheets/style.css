@@ -14,9 +14,26 @@ nav {
   min-height: 80px;
 }
 
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+}
+
 nav h2,
 .nav-links {
   margin: 0;
+}
+
+.home-link {
+  color: black;
+}
+
+.home-link:hover {
+  color: black;
+  text-decoration: none;
 }
 
 .logo {
@@ -25,14 +42,6 @@ nav h2,
 
 .nav-links {
   gap: 1rem;
-}
-
-.nav-links a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-  text-decoration: none;
 }
 
 a.action-link {
