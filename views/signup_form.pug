@@ -1,4 +1,26 @@
 extends layout
 
 block content
-  h1= title
+  div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 login-container")
+    if user
+      h1 You are already logged in!
+    
+    else
+      h1(class="form-title")= title
+      form(class="d-flex flex-column" action="" method="POST")
+        label(for="username") Username
+        input(id="username" name="username" required="true" type="text")
+
+        label(class="mt-2" for="display_name") Display Name
+        input(id="display_name" name="display_name" required="true" type="text")
+
+        label(class="mt-2" for="password") Password
+        input(id="password" name="password" required="true" type="password")
+
+        label(class="mt-2" for="profile_picture") Profile Picture
+        input(id="profile_picture" name="profile_picture" type="file")
+
+        button(class="my-3 signup-btn" type="submit") Sign Up
+
+      p Already have an account? Login
+        a(class="ml-1" href="/account/login") here

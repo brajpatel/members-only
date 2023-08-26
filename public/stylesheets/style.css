@@ -165,7 +165,8 @@ form input:focus {
   border-radius: 10px;
 }
 
-.login-btn {
+.login-btn,
+.signup-btn {
   width: max-content;
   margin: 0 auto;
   border-radius: 10px;
@@ -174,4 +175,9 @@ form input:focus {
   background: rgb(82, 94, 181);
   color: white;
   border: 2px solid rgb(82, 94, 181);
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background: rgb(99, 111, 199);
 }
