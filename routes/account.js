@@ -7,7 +7,7 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/sign-up', function(req, res, next) {
-    res.render("signup_form", { title: "Sign in" });
+    res.render("signup_form", { title: "Sign up" });
   });
 
 module.exports = router;
