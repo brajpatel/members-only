@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/message', messageRouter);
 app.use('/account', accountRouter);
-app.use('/account-status', accountStatusRouter);
+app.use('/upgrade-account', accountStatusRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
