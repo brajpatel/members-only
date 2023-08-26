@@ -6,15 +6,15 @@ block content
       h1 You are already logged in!
     
     else
-      h1= title
+      h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST")
         label(for="username") Username
-        input(class="px-2 py-1" id="username" name="username" value="" type="text")
+        input(id="username" name="username" value="" type="text")
 
-        label(for="password") Password
-        input(class="px-2 py-1" id="password" name="password" type="password")
+        label(class="mt-2" for="password") Password
+        input(id="password" name="password" type="password")
 
-        button Sign In
+        button(class="my-3 login-btn" type="submit") Login
 
       p Don't have an account? Sign up
         a(class="ml-1" href="/account/sign-up") here
