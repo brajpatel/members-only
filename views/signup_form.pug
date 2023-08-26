@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 login-container")
+  div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 sign-up-container")
     if user
       h1 You are already logged in!
     
@@ -20,7 +20,7 @@ block content
         label(class="mt-2" for="profile_picture") Profile Picture
         input(id="profile_picture" name="profile_picture" type="file")
 
-        button(class="my-3 signup-btn" type="submit") Sign Up
+        button(class="my-3 sign-up-btn" type="submit") Sign Up
 
       p Already have an account? Login
         a(class="ml-1" href="/account/login") here

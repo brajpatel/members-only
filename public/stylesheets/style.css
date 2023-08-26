@@ -7,11 +7,13 @@
 
 body {
   font-family: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
+  background: #f6f6f6;
 }
 
 nav {
   box-shadow: 0 0 15px rgb(155, 155, 155);
   min-height: 80px;
+  background: white;
 }
 
 nav a {
@@ -159,14 +161,16 @@ form input:focus {
   text-decoration: underline;
 }
 
-.login-container {
+.login-container,
+.sign-up-container {
   max-width: 400px;
   box-shadow: 0 4px 15px rgb(177, 177, 177);
   border-radius: 10px;
+  background: white;
 }
 
 .login-btn,
-.signup-btn {
+.sign-up-btn {
   width: max-content;
   margin: 0 auto;
   border-radius: 10px;
@@ -178,6 +182,6 @@ form input:focus {
 }
 
 .login-btn:hover,
-.signup-btn:hover {
+.sign-up-btn:hover {
   background: rgb(99, 111, 199);
 }
