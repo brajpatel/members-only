@@ -9,10 +9,10 @@ block content
       h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST")
         label(for="username") Username
-        input(id="username" name="username" value="" type="text")
+        input(id="username" name="username" required="true" type="text")
 
         label(class="mt-2" for="password") Password
-        input(id="password" name="password" type="password")
+        input(id="password" name="password" required="true" type="password")
 
         button(class="my-3 login-btn" type="submit") Login
 
