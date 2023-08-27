@@ -21,7 +21,7 @@ exports.account_create_post = [
         .escape(),
 
     asyncHandler(async (req, res, next) => {
-        const errors = validationresult(req);
+        const errors = validationResult(req);
 
         const user = new User({
             username: req.body.username,
