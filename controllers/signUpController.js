@@ -1,6 +1,7 @@
 const { body, validationResult } = require('express-validator');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/user');
+const passport = require('passport');
 
 const multer = require('multer');
 const storage = multer.memoryStorage();
@@ -63,5 +64,9 @@ exports.sign_up_post = [
             await user.save();
             res.redirect('/login');
         }
+    }),
+    passport.authenticate("local", {
+        successRedirect: "/",
+        failureRedirect: "/sign-up",
     })
 ]
