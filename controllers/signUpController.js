@@ -61,7 +61,7 @@ exports.sign_up_post = [
         }
         else {
             await user.save();
-            res.redirect('/');
+            res.redirect('/login');
         }
     })
 ]
