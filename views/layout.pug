@@ -17,7 +17,14 @@ html(lang='en')
             h2(class="font-weight-bold") Members Only
             img(class="ml-2 logo" src="/images/logo.png" alt="logo")
         ul(class="d-flex align-items-center nav-links")
-          if user
+
+          if !user
+            a(href="/login" class="account-link login") Login
+              i(class="fa-solid fa-right-from-bracket")
+            a(href="/sign-up" class="account-link sign-up") Sign Up
+              i(class="fa-solid fa-user-plus")
+
+          else
             a(href="#" class="action-link create-message")
               i(class="fa-solid fa-plus" title="Create a message")
             //- ONLY DISPLAY THIS LINK IF THE USER IS ===NOT=== A MEMBER
@@ -32,12 +39,6 @@ html(lang='en')
               div(class="profile")
               a(href="#" class="account-link sign-out") Sign Out
                 i(class="fa-solid fa-right-from-bracket")
-
-          else
-            a(href="/login" class="account-link login") Login
-              i(class="fa-solid fa-right-from-bracket")
-            a(href="/sign-up" class="account-link sign-up") Sign Up
-              i(class="fa-solid fa-user-plus")
 
       div(class="px-3")
         block content
