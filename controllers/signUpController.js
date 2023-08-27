@@ -40,5 +40,9 @@ exports.account_create_post = [
                 errors: errors.array()
             })
         }
+        else {
+            await user.save();
+            res.redirect('/');
+        }
     })
 ]
