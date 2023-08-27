@@ -17,11 +17,11 @@ const upload = multer({
     }
 })
 
-exports.account_create_get = asyncHandler(async (req, res, next) => {
+exports.sign_up_get = asyncHandler(async (req, res, next) => {
     res.render("signup_form", { title: "Sign up" });
 });
 
-exports.account_create_post = [
+exports.sign_up_post = [
     upload.single("profile_picture"),
     
     body("username", "Username must be between 5 and 20 characters long")
