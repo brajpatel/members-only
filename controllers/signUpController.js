@@ -2,11 +2,28 @@ const { body, validationResult } = require('express-validator');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/user');
 
+const multer = require('multer');
+const storage = multer.memoryStorage();
+const upload = multer({
+    storage,
+    limits: { fileSize: 5242880 },
+    fileFilter: (req, file, cb) => {
+        if(file.mimetype.startsWith("image/")) {
+            cb(null, true);
+        }
+        else {
+            cb(new Error("File format must be an image"), false);
+        }
+    }
+})
+
 exports.account_create_get = asyncHandler(async (req, res, next) => {
     res.render("signup_form", { title: "Sign up" });
 });
 
 exports.account_create_post = [
+    upload.single("profile_picture"),
+    
     body("username", "Username must be between 5 and 20 characters long")
         .trim()
         .isLength({ min: 3 })
@@ -39,6 +56,8 @@ exports.account_create_post = [
                 user: user,
                 errors: errors.array()
             })
+
+            return;
         }
         else {
             await user.save();
