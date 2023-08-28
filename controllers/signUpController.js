@@ -20,6 +20,10 @@ const upload = multer({
 })
 
 exports.sign_up_get = asyncHandler(async (req, res, next) => {
+    if(req.user) {
+        res.redirect("/");
+    }
+    
     res.render("signup_form", { title: "Sign up" });
 });
 
