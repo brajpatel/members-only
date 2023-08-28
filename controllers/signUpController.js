@@ -1,6 +1,7 @@
 const { body, validationResult } = require('express-validator');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/user');
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 const multer = require('multer');
@@ -61,12 +62,17 @@ exports.sign_up_post = [
             return;
         }
         else {
-            await user.save();
-            next();
+            bcrypt.hash(req.body.password, 10, async (err, hashedPassword) => {
+                if(err) return next(err);
+                user.password = hashedPassword;
+
+                await user.save();
+                next();
+            })
         }
     }),
     passport.authenticate("local", {
         successRedirect: "/",
-        failureRedirect: "/sign-up",
+        failureRedirect: "/"
     })
 ]
