@@ -34,10 +34,11 @@ html(lang='en')
             if user.account_status === "member"
               a(href="/upgrade-account/admin" class="action-link become-admin")
                 i(class="fa-solid fa-user-secret" title="Become an admin")
-            div(class="position-relative profile-container")
-              div(class="profile")
-                img(src=(user.profile_picture === undefined ? '' : user.profile_picture) alt="user profile picture")
-              a(href="#" class="account-link sign-out") Sign Out
+            div(class="d-flex align-items-center position-relative profile-container")
+              p #{user.display_name}
+              div(class="profile" style=(user.profile_picture === undefined ? 'background: url(/images/default-profile-picture.jpg) no-repeat center' : 'background: url(' + user.profile_picture_url + ') no-repeat center'))
+                //- img(src=(user.profile_picture === undefined ? '/images/default-profile-picture.jpg' : user.profile_picture_url) alt="user profile picture")
+              a(href="#" class="account-link sign-out") Sort me out
                 i(class="fa-solid fa-right-from-bracket")
 
       div(class="px-3")

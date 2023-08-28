@@ -18,4 +18,10 @@ const UserSchema = new Schema({
     profile_picture: { data: Buffer, contentType: String }
 })
 
+UserSchema.virtual("profile_picture_url").get(function() {
+    if(!this.profile_picture.data) return '';
+
+    return `data:${this.profile_picture.contentType};base64,${this.profile_picture.data.toString("base64")}`;
+})
+
 module.exports = mongoose.model("User", UserSchema);
