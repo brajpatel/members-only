@@ -9,8 +9,6 @@ const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const app = express();
-
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const mongoDB = process.env.MONGODB_CONNECTION_STRING;
@@ -66,6 +64,8 @@ const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const signUpRouter = require('./routes/sign_up');
 const accountStatusRouter = require('./routes/account_status');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

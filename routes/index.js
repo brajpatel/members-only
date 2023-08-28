@@ -3,10 +3,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render("message_list", {
-    ...(req.user) && { user: req.user },
-    ...(!req.user) && { user: undefined }
-  });
+  res.render("message_list", { user: req.user });
 });
 
 module.exports = router;

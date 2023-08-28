@@ -1,6 +1,5 @@
 const asyncHandler = require('express-async-handler');
 const passport = require('passport');
-const User = require('../models/user');
 
 exports.login_get = asyncHandler(async (req, res, next) => {
     if(req.user) {
