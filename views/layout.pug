@@ -17,8 +17,7 @@ html(lang='en')
             h2(class="font-weight-bold") Members Only
             img(class="ml-2 logo" src="/images/logo.png" alt="logo")
         ul(class="d-flex align-items-center nav-links")
-
-          if !user
+          if user === undefined
             a(href="/login" class="account-link login") Login
               i(class="fa-solid fa-right-from-bracket")
             a(href="/sign-up" class="account-link sign-up") Sign Up
@@ -37,6 +36,7 @@ html(lang='en')
                 i(class="fa-solid fa-user-secret" title="Become an admin")
             div(class="position-relative profile-container")
               div(class="profile")
+                img(src=(user.profile_picture === undefined ? '' : user.profile_picture) alt="user profile picture")
               a(href="#" class="account-link sign-out") Sign Out
                 i(class="fa-solid fa-right-from-bracket")
 
