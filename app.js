@@ -5,6 +5,7 @@ const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
@@ -33,12 +34,13 @@ passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
       const user = await User.findOne({ username: username });
+      const match = await bcrypt.compare(password, user.password);
 
       if(!user) {
         return done(null, false, { message: "Username not found" });
       }
 
-      if(user.password !== password) {
+      if(!match) {
         return done(null, false, { message: "Incorrect password" });
       }
 
