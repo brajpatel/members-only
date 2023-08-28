@@ -62,7 +62,7 @@ exports.sign_up_post = [
         }
         else {
             await user.save();
-            res.redirect('/login');
+            next();
         }
     }),
     passport.authenticate("local", {
