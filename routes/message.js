@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/create', function(req, res, next) {
-    res.render("message_form", { title: "Message Create", user: true });
+    res.render("message_form", { title: "Message Create", user: req.user });
 })
 
 router.get('/:id', function(req, res, next) {
