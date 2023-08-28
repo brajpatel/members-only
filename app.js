@@ -9,12 +9,6 @@ const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const messageRouter = require('./routes/message');
-const loginRouter = require('./routes/login');
-const signUpRouter = require('./routes/sign_up');
-const accountStatusRouter = require('./routes/account_status');
-
 const app = express();
 
 const mongoose = require("mongoose");
@@ -66,6 +60,13 @@ passport.deserializeUser(async function(id, done) {
   }
 })
 
+const indexRouter = require('./routes/index');
+const messageRouter = require('./routes/message');
+const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
+const signUpRouter = require('./routes/sign_up');
+const accountStatusRouter = require('./routes/account_status');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -82,6 +83,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/message', messageRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/sign-up', signUpRouter);
 app.use('/upgrade-account', accountStatusRouter);
 

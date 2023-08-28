@@ -38,7 +38,7 @@ html(lang='en')
               p #{user.display_name}
               div(class="profile" style=(user.profile_picture === undefined ? 'background: url(/images/default-profile-picture.jpg) no-repeat center' : 'background: url(' + user.profile_picture_url + ') no-repeat center'))
                 //- img(src=(user.profile_picture === undefined ? '/images/default-profile-picture.jpg' : user.profile_picture_url) alt="user profile picture")
-              a(href="#" class="account-link sign-out") Sort me out
+              a(href="/logout" class="account-link sign-out") Sort me out
                 i(class="fa-solid fa-right-from-bracket")
 
       div(class="px-3")
