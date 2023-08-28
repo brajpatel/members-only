@@ -137,8 +137,6 @@ a.sign-out:hover {
   border: 2px solid rgb(82, 94, 181);
   border-radius: 50px;
   cursor: pointer;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 form {

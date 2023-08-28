@@ -36,7 +36,7 @@ html(lang='en')
                 i(class="fa-solid fa-user-secret" title="Become an admin")
             div(class="d-flex align-items-center position-relative profile-container")
               p #{user.display_name}
-              div(class="profile" style=(user.profile_picture === undefined ? 'background: url(/images/default-profile-picture.jpg) no-repeat center' : 'background: url(' + user.profile_picture_url + ') no-repeat center'))
+              div(class="profile" style=(user.profile_picture === undefined ? 'background: url(/images/default-profile-picture.jpg) no-repeat center; background-size: cover;' : 'background: url(' + user.profile_picture_url + ') no-repeat center; background-size: cover'))
                 //- img(src=(user.profile_picture === undefined ? '/images/default-profile-picture.jpg' : user.profile_picture_url) alt="user profile picture")
               a(href="/logout" class="account-link sign-out") Sort me out
                 i(class="fa-solid fa-right-from-bracket")
