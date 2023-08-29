@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    username: {
+    email: {
         type: String,
-        minLength: 5,
-        maxLength: 20,
         unique: true,
         index: {
             collation: { locale: "en", strength: 2 }

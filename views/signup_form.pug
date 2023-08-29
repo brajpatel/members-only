@@ -8,8 +8,8 @@ block content
     else
       h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST" enctype="multipart/form-data")
-        label(for="username") Username*
-        input(id="username" name="username" value=(user === undefined ? '' : user.username) required="true" type="text" autofocus)
+        label(for="email") Email*
+        input(id="email" name="email" value=(user === undefined ? '' : user.email) required="true" type="email" autofocus)
 
         label(class="mt-2" for="display_name") Display Name*
         input(id="display_name" name="display_name" value=(user === undefined ? '' : user.display_name) required="true" type="text")
