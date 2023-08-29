@@ -1,8 +1,14 @@
 extends layout
 
 block content
-  if user
-    h1= title
+  div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 message-create-container")
+    if user
+      h1(class="form-title")= title
+      form(class="d-flex flex-column" action="" method="POST")
+        label(for="username") Message
+        input(id="username" name="username" required="true" type="text" autofocus)
 
-  else
-    h1 You need to be signed in to create messages
+        button(class="my-3 create-message-btn" type="submit") Create Message
+
+    else
+      h1 You need to be signed in to create messages

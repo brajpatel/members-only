@@ -24,7 +24,7 @@ html(lang='en')
               i(class="fa-solid fa-user-plus")
 
           else
-            a(href="#" class="action-link create-message")
+            a(href="/message/create" class="action-link create-message")
               i(class="fa-solid fa-plus" title="Create a message")
             //- ONLY DISPLAY THIS LINK IF THE USER IS ===NOT=== A MEMBER
             if user.account_status === "none"

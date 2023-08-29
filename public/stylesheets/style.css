@@ -10,6 +10,10 @@ body {
   background: #f6f6f6;
 }
 
+h1 {
+  text-align: center;
+}
+
 nav {
   box-shadow: 0 0 15px rgb(155, 155, 155);
   min-height: 80px;
@@ -74,7 +78,7 @@ a.action-link:hover > i {
 }
 
 .create-message {
-  background: rgb(94, 228, 125);
+  background: rgb(70, 214, 104);
   color: white;
 }
 
@@ -162,27 +166,51 @@ form input:focus {
 }
 
 .login-container,
-.sign-up-container {
-  max-width: 400px;
+.sign-up-container,
+.message-create-container {
   box-shadow: 0 4px 15px rgb(177, 177, 177);
   border-radius: 10px;
   background: white;
   margin-top: 3rem;
 }
 
+.login-container,
+.sign-up-container {
+  max-width: 400px;
+}
+
 .login-btn,
-.sign-up-btn {
+.sign-up-btn,
+.create-message-btn {
   width: max-content;
   margin: 0 auto;
   border-radius: 10px;
   padding: 0.4rem 0.9rem;
   font-size: 1.1rem;
-  background: rgb(82, 94, 181);
+}
+
+.login-btn,
+.sign-up-btn {
   color: white;
+  background: rgb(82, 94, 181);
   border: 2px solid rgb(82, 94, 181);
 }
 
 .login-btn:hover,
 .sign-up-btn:hover {
   background: rgb(99, 111, 199);
+}
+
+.message-create-container {
+  max-width: 500px;
+}
+
+.create-message-btn {
+  color: white;
+  background: rgb(70, 214, 104);
+  border: 2px solid rgb(70, 214, 104);
+}
+
+.create-message-btn:hover {
+  background: rgb(93, 215, 122);
 }
