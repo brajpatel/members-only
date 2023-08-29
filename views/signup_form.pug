@@ -27,3 +27,8 @@ block content
 
       p Just want to view the messages? Click
         a(class="ml-1" href="/") here
+
+      if errors
+        ul
+          for error in errors
+            li!= error.msg
