@@ -30,7 +30,7 @@ exports.sign_up_get = asyncHandler(async (req, res, next) => {
 exports.sign_up_post = [
     upload.single("profile_picture"),
     
-    body("email", "Email is invalid")
+    body("username", "Username is invalid")
         .trim()
         .escape(),
     body("display_name", "Display name must be at least 3 characters long")
@@ -45,7 +45,7 @@ exports.sign_up_post = [
         const errors = validationResult(req);
 
         const user = new User({
-            email: req.body.email,
+            username: req.body.username,
             display_name: req.body.display_name,
             password: req.body.password,
             account_status: "none",

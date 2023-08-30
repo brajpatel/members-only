@@ -8,8 +8,8 @@ block content
     else
       h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST")
-        label(for="email") Email
-        input(id="email" name="email" value=(user === undefined ? '' : user.email) required="true" type="email" autofocus)
+        label(for="username") Username
+        input(id="username" name="username" value=(user === undefined ? '' : user.username) required="true" type="text" autofocus)
 
         label(class="mt-2" for="password") Password
         input(id="password" name="password" required="true" type="password")

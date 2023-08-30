@@ -25,7 +25,7 @@ const User = require('./models/user');
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
-      const user = await User.findOne({ email: username });
+      const user = await User.findOne({ username: username });
       const match = await bcrypt.compare(password, user.password);
 
       if(!user) {
