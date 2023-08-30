@@ -73,8 +73,9 @@ exports.sign_up_post = [
             })
         }
     }),
+
     passport.authenticate("local", {
         successRedirect: "/",
-        failureRedirect: "/"
+        failureRedirect: "/sign-up"
     })
 ]
