@@ -25,11 +25,11 @@ const User = require('./models/user');
 passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
-      const user = await User.findOne({ username: username });
+      const user = await User.findOne({ email: username });
       const match = await bcrypt.compare(password, user.password);
 
       if(!user) {
-        return done(null, false, { message: "Username not found" });
+        return done(null, false, { message: "Email not found" });
       }
 
       if(!match) {
@@ -66,11 +66,6 @@ const signUpRouter = require('./routes/sign_up');
 const accountStatusRouter = require('./routes/account_status');
 
 const app = express();
-
-app.use(function(req, res, next) {
-  res.locals.currentUser = req.user;
-  next();
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
