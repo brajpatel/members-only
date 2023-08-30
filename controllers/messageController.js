@@ -5,7 +5,7 @@ exports.message_create_get = asyncHandler(async (req, res, next) => {
         res.redirect("/");
     }
 
-    res.render("message_form", { title: "Create new message" });
+    res.render("message_form", { title: "Create new message", user: req.user });
 });
 
 exports.message_create_post = []

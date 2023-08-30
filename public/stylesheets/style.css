@@ -135,7 +135,7 @@ a.sign-out:hover {
 }
 
 .username.none {
-  background: #121212;
+  background: #222222;
 }
 
 .username.member {
@@ -170,7 +170,7 @@ a.sign-out:hover {
 }
 
 .profile.none {
-  border: 2px solid black;
+  border: 2px solid #222222;
 }
 
 .profile.member {
