@@ -67,6 +67,11 @@ const accountStatusRouter = require('./routes/account_status');
 
 const app = express();
 
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
