@@ -35,7 +35,7 @@ html(lang='en')
                 i(class="fa-solid fa-user-secret" title="Become an admin")
             div(class="d-flex align-items-center position-relative profile-container")
               p(class=(user.account_status === 'member' ? 'username member' : user.account_status === 'admin' ? 'username admin' : 'username none')) #{user.display_name}
-              div(class=(user.account_status === 'member' ? 'profile member' : user.account_status === 'admin' ? 'profile admin' : 'profile none') style=(user.profile_picture === undefined ? 'background: url(' + '/images/default-profile-picture.jpg' + ') no-repeat center; background-size: cover;' : 'background: url(' + user.profile_picture_url + ') no-repeat center; background-size: cover;'))
+              div(class=(user.account_status === 'member' ? 'profile member' : user.account_status === 'admin' ? 'profile admin' : 'profile none') style=(user.profile_picture === undefined ? 'background: url(' + user.default_avatar + ') no-repeat center; background-size: cover;' : 'background: url(' + user.profile_picture_url + ') no-repeat center; background-size: cover;'))
               a(href="/logout" class="account-link sign-out") Logout
                 i(class="fa-solid fa-right-from-bracket")
 

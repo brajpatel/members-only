@@ -51,7 +51,8 @@ exports.sign_up_post = [
             account_status: "none",
             profile_picture: req.file
                 ? { data: req.file.buffer, contentType: req.file.mimetype }
-                : undefined
+                : undefined,
+            default_avatar: "/images/default-profile-picture.jpg"
         })
 
         if(!errors.isEmpty()) {

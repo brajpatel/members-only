@@ -6,7 +6,8 @@ const UserSchema = new Schema({
     display_name: { type: String, minLength: 3, required: true },
     password: { type: String, minLength: 6, required: true },
     account_status: { type: String, enum: ["none", "member", "admin"], default: "none" },
-    profile_picture: { data: Buffer, contentType: String }
+    profile_picture: { data: Buffer, contentType: String },
+    default_avatar: { type: String }
 })
 
 UserSchema.virtual('url').get(function() {

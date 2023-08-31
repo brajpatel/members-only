@@ -5,12 +5,11 @@ block content
     h1 #{title}
     ul(class="d-flex flex-column")
       each message, index in message_list
-        li
-          div
-            p see author and date if member or above
-            p
-              a(href=message.author.url) #{message.author.username}
-              span  - #{message.date_added}
+        li(class="d-flex flex-column align-items-center")
+          div(class="d-flex flex-column align-items-center")
+            a(href=message.author.url) #{message.author.username}
+            img(src=(message.author.profile_picture === undefined ? message.author.default_avatar : message.author.profile_picture_url))
+            p #{message.date_added}
             p #{message.text}
           button Delete if admin only
 
