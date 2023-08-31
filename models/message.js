@@ -7,8 +7,4 @@ const MessageSchema = new Schema({
     author: { type: Schema.Types.ObjectId, ref: "User" }
 })
 
-MessageSchema.virtual('url').get(function() {
-    return `/message/${this.id}`;
-})
-
 module.exports = mongoose.model("Message", MessageSchema);
