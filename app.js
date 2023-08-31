@@ -62,6 +62,7 @@ const messageRouter = require('./routes/message');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const signUpRouter = require('./routes/sign_up');
+const userRouter = require('./routes/user');
 const accountStatusRouter = require('./routes/account_status');
 
 const app = express();
@@ -88,6 +89,7 @@ app.use('/', messageRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/sign-up', signUpRouter);
+app.use('/user', userRouter);
 app.use('/upgrade-account', accountStatusRouter);
 
 // catch 404 and forward to error handler
