@@ -2,7 +2,10 @@ extends layout
 
 block content
   div
-    h1 All messages by #{user.username}
+    div
+      h1 #{selectedUser.username}
+      div(class=(selectedUser.account_status === 'member' ? 'profile-picture selected-user-profile member' : selectedUser.account_status === 'admin' ? 'profile-picture selected-user-profile admin' : 'profile-picture selected-user-profile none') style=`background: url(${selectedUser.profile_picture}) no-repeat center; background-size: cover;`)
+
     ul(class="d-flex flex-column")
       each message, index in message_list
         li
@@ -12,7 +15,3 @@ block content
             p #{message.date_added}
             p #{message.text}
           button Delete if admin only
-
-      else
-        p Looks like there aren't any messages here... yet
-        p SOME IMG

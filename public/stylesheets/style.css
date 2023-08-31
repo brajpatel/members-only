@@ -180,26 +180,26 @@ a.sign-out:hover {
   opacity: 1;
 }
 
-.profile {
-  min-height: 60px;
-  width: 60px;
-  border-radius: 50px;
-  cursor: pointer;
-  /* background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
+.profile-picture {
+  border-radius: 50%;
 }
 
-.profile.none {
+.profile-picture.none {
   border: 2px solid #3b4f7e;
 }
 
-.profile.member {
+.profile-picture.member {
   border: 2px solid gold;
 }
 
-.profile.admin {
+.profile-picture.admin {
   border: 2px solid rgb(226, 13, 116);
+}
+
+.avatar {
+  min-height: 60px;
+  width: 60px;
+  cursor: pointer;
 }
 
 form {
@@ -291,10 +291,9 @@ form label {
   border-radius: 10px;
 }
 
-.user-profile {
+.message-profile {
   min-height: 90px;
   width: 90px;
-  border-radius: 50px;
 }
 
 .message-text {
@@ -319,4 +318,9 @@ form label {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.selected-user-profile {
+  height: 300px;
+  width: 300px;
 }

@@ -3,10 +3,10 @@ const User = require('../models/user');
 const Message = require('../models/message');
 
 exports.user_message_list = asyncHandler(async (req, res, next) => {
-    const [user, allMessagesByUser] = await Promise.all([
+    const [selectedUser, allMessagesByUser] = await Promise.all([
         User.findById(req.params.id).exec(),
         Message.find({ author: req.params.id }).exec()
     ])
 
-    res.render("user_detail", { user: user, message_list: allMessagesByUser });
+    res.render("user_detail", { user: req.user, selectedUser: selectedUser, message_list: allMessagesByUser });
 });
