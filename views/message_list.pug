@@ -9,7 +9,7 @@ block content
           div(class="d-flex flex-column align-items-center")
             a(href=message.author.url)
               p #{message.author.username}
-              div(class=(message.author.account_status === 'member' ? 'user-profile profile member' : message.author.account_status === 'admin' ? 'user-profile profile admin' : 'user-profile profile none') style=(message.author.profile_picture === undefined ? 'background: url(' + message.author.default_avatar + ') no-repeat center; background-size: cover;' : 'background: url(' + message.author.profile_picture_url + ') no-repeat center; background-size: cover;'))
+              div(class=(message.author.account_status === 'member' ? 'user-profile profile member' : message.author.account_status === 'admin' ? 'user-profile profile admin' : 'user-profile profile none') style=`background: url(${message.author.profile_picture}) no-repeat center; background-size: cover;`)
             p #{message.date_added}
             p(class="message-text") #{message.text}
           button Delete if admin only

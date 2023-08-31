@@ -185,6 +185,9 @@ a.sign-out:hover {
   width: 60px;
   border-radius: 50px;
   cursor: pointer;
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
 }
 
 .profile.none {
