@@ -44,14 +44,18 @@ exports.sign_up_post = [
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
 
+        let imageURL = 'https://i.pinimg.com/564x/18/4b/f7/184bf73183b0fbddc65212b27f787d06.jpg';
+
+        if(req.body.profile_picture != '') {
+            imageURL = req.body.profile_picture;
+        }
+
         const user = new User({
             username: req.body.username,
             display_name: req.body.display_name,
             password: req.body.password,
             account_status: "none",
-            profile_picture: req.file
-                ? { data: req.file.buffer, contentType: req.file.mimetype }
-                : undefined,
+            profile_picture: imageURL,
             default_avatar: "/images/default-profile-picture.jpg"
         })
 
