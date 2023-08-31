@@ -8,13 +8,13 @@ block content
     else
       h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST")
-        label(for="username") Username
+        label(for="username") #[strong Username]
         input(id="username" name="username" value=(user === undefined ? '' : user.username) required="true" type="text" autofocus)
 
-        label(class="mt-2" for="password") Password
+        label(class="mt-2" for="password") #[strong Password]
         input(id="password" name="password" required="true" type="password")
 
-        button(class="my-3 login-btn" type="submit") Login
+        button(class="my-3 login-btn" type="submit") #[strong Login]
 
       p Don't have an account? Sign up
         a(class="ml-1" href="/sign-up") here

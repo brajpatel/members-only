@@ -206,7 +206,8 @@ form {
   width: 100%;
 }
 
-form input {
+form input,
+textarea {
   outline: none;
   border: 1px solid #121212;
   border-radius: 6px;
@@ -215,7 +216,8 @@ form input {
   transition: 0.3s ease;
 }
 
-form input:focus {
+form input:focus,
+textarea:focus {
   background: rgb(215, 217, 230);
   box-shadow: 0 2px 5px grey;
 }

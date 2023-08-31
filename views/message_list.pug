@@ -1,11 +1,17 @@
 extends layout
 
 block content
-  h1 #{title}
-  //- ul
-  //-   each message, index in message_list
-  //-     li buh
+  div
+    h1 #{title}
+    //- ul(class="d-flex flex-column")
+    //-   each message, index in message_list
+    //-     li
+    //-       div
+    //-         p see author and date if member or above
+    //-         p #{message.author.username} - #{message.date_added}
+    //-         p #{message.text}
+    //-       button Delete if admin only
 
-  //-   else
-  //-     p Looks like there aren't any messages here... yet
-  //-     p SOME IMG
+    //-   else
+    //-     p Looks like there aren't any messages here... yet
+    //-     p SOME IMG

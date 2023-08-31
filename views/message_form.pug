@@ -5,8 +5,10 @@ block content
     if user
       h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST")
-        label(for="username") Message
-        input(id="username" name="username" required="true" type="text" autofocus)
+        label(for="message") #[strong Message]
+        textarea(id="message" name="message" rows="5" cols="10" required="true" autofocus)
+
+        input(id="author" name="author" value=user._id type="hidden")
 
         button(class="my-3 create-message-btn" type="submit") Create Message
 
