@@ -320,7 +320,21 @@ form label {
   }
 }
 
+.user-detail {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.user-info {
+  width: max-content;
+  gap: 1rem;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px #a0a0a0;
+}
+
 .selected-user-profile {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
 }

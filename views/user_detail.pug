@@ -1,17 +1,18 @@
 extends layout
 
 block content
-  div
-    div
+  div(class="user-detail")
+    div(class="d-flex flex-column align-items-center p-4 user-info")
       h1 #{selectedUser.username}
       div(class=(selectedUser.account_status === 'member' ? 'profile-picture selected-user-profile member' : selectedUser.account_status === 'admin' ? 'profile-picture selected-user-profile admin' : 'profile-picture selected-user-profile none') style=`background: url(${selectedUser.profile_picture}) no-repeat center; background-size: cover;`)
+      p NUMBER OF MESSAGES: NUM
 
-    ul(class="d-flex flex-column")
+    ul(class="d-flex flex-wrap message-list")
       each message, index in message_list
-        li
-          div
+        li(class="d-flex flex-column align-items-center p-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
+          div(class="d-flex flex-column align-items-center")
             p see author and date if member or above
             p(class="h2") #{message.author.username}
             p #{message.date_added}
-            p #{message.text}
+            p(class="message-text") #{message.text}
           button Delete if admin only
