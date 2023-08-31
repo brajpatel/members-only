@@ -14,8 +14,7 @@ html(lang='en')
       nav(class="d-flex justify-content-between align-items-center px-4")
         div(class="d-flex")
           a(href="/" class="home-link")
-            h2(class="font-weight-bold") Members Only
-            img(class="ml-2 logo" src="/images/logo.png" alt="logo")
+            h2(class="font-weight-bold app-title") Members Only
         ul(class="d-flex align-items-center nav-links")
           if user === undefined
             a(href="/login" class="account-link login") Login

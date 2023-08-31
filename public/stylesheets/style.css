@@ -20,6 +20,27 @@ nav {
   background: white;
 }
 
+.app-title {
+  position: relative;
+  z-index: 0;
+}
+
+.app-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: gold;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.app-title:hover::after {
+  width: 100%;
+}
+
 nav a {
   display: flex;
   justify-content: center;
