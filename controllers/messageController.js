@@ -5,7 +5,7 @@ const Message = require('../models/message');
 exports.message_list = asyncHandler(async (req, res, next) => {
     const allMessages = await Message.find().populate("author").exec();
 
-    res.render('message_list', { title: "All Messages", message_list: allMessages });
+    res.render('message_list', { title: "All Messages", user: req.user, message_list: allMessages });
 })
 
 exports.message_create_get = asyncHandler(async (req, res, next) => {

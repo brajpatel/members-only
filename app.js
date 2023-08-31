@@ -58,7 +58,6 @@ passport.deserializeUser(async function(id, done) {
   }
 })
 
-const indexRouter = require('./routes/index');
 const messageRouter = require('./routes/message');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
@@ -85,8 +84,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/message', messageRouter);
+app.use('/', messageRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/sign-up', signUpRouter);
