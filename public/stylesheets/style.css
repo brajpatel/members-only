@@ -54,7 +54,8 @@ nav a:hover {
 }
 
 nav h2,
-.nav-links {
+.nav-links,
+p {
   margin: 0;
 }
 
@@ -72,10 +73,6 @@ nav h2,
 
 .nav-links {
   gap: 1rem;
-}
-
-.nav-links p {
-  margin: 0;
 }
 
 a.action-link {
@@ -278,4 +275,15 @@ form label {
 
 .create-message-btn:hover {
   background: rgb(93, 215, 122);
+}
+
+.message-list {
+  gap: 1.5rem;
+}
+
+.message-card {
+  width: max-content;
+  background: white;
+  box-shadow: 0 8px 20px #a0a0a0;
+  border-radius: 10px;
 }

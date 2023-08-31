@@ -6,7 +6,7 @@ block content
       h1 You are already logged in!
     
     else
-      h1(class="form-title")= title
+      h1(class="form-title") #{title}
       form(class="d-flex flex-column" action="" method="POST" enctype="multipart/form-data")
         label(for="username") #[strong Username*]
         input(id="username" name="username" value=(user === undefined ? '' : user.username) required="true" type="text" autofocus)
