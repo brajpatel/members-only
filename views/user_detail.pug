@@ -2,7 +2,7 @@ extends layout
 
 block content
   div
-    h1 #{title}
+    h1 All messages by #{user.username}
     ul(class="d-flex flex-column")
       each message, index in message_list
         li

@@ -9,6 +9,10 @@ const UserSchema = new Schema({
     profile_picture: { data: Buffer, contentType: String }
 })
 
+UserSchema.virtual('url').get(function() {
+    return `/user/${this.id}`;
+})
+
 UserSchema.virtual("profile_picture_url").get(function() {
     if(!this.profile_picture.data) return '';
 

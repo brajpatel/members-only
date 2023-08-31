@@ -8,7 +8,9 @@ block content
         li
           div
             p see author and date if member or above
-            p #{message.author.username} - #{message.date_added}
+            p
+              a(href=message.author.url) #{message.author.username}
+              span  - #{message.date_added}
             p #{message.text}
           button Delete if admin only
 

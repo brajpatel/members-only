@@ -27,7 +27,7 @@ exports.message_create_post = [
 
         const message = new Message({
             text: req.body.message,
-            date_added: new Date().toLocaleDateString(),
+            date_added: new Date().toLocaleDateString() + ' - ' + new Date().toLocaleTimeString(),
             author: req.body.author
         })
 

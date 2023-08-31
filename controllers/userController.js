@@ -8,5 +8,5 @@ exports.user_message_list = asyncHandler(async (req, res, next) => {
         Message.find({ author: req.params.id }).exec()
     ])
 
-    res.render("login_form", { title: "Login", user: user, message_list: allMessagesByUser });
+    res.render("user_detail", { user: user, message_list: allMessagesByUser });
 });
