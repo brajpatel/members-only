@@ -1,8 +1,14 @@
 extends layout
 
 block content
-  if user.account_status === "member"
-    h1 You are already a member!
+  div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 become-member-container")
+    if user.account_status === "member"
+      h1 You are already a member!
 
-  else
-    h1= title
+    else
+      h1(class="form-title") #{title}
+      p(class="text-center") By becoming a member, you'll be able to see who created each message and when. You'll also then have the opportunity to become an admin.
+      form(class="d-flex flex-column" action="" method="POST")
+        label(for="member_password") #[strong Password]
+        input(id="member_password" name="member_password" required="true" type="password" autofocus)
+        button(class="my-3 create-message-btn" type="submit") Create Message
