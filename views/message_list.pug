@@ -7,12 +7,21 @@ block content
       each message, index in message_list
         li(class="d-flex flex-column align-items-center p-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
           div(class="d-flex flex-column align-items-center")
-            a(href=message.author.url)
-              p #{message.author.username}
-              div(class=(message.author.account_status === 'member' ? 'profile-picture message-profile member' : message.author.account_status === 'admin' ? 'profile-picture message-profile admin' : 'profile-picture message-profile none') style=`background: url(${message.author.profile_picture}) no-repeat center; background-size: cover;`)
-            p #{message.date_added}
+            if user === undefined
+              p(class="d-flex flex-column align-items-center")
+                p(class="username hide") #{message.author.username}
+                div(class=(message.author.account_status === 'member' ? 'my-2 profile-picture message-profile member' : message.author.account_status === 'admin' ? 'my-2 profile-picture message-profile admin' : 'my-2 profile-picture message-profile none') style=`background: url(${message.author.profile_picture}) no-repeat center; background-size: cover;`)
+              
+            else if user !== undefined
+              a(class="d-flex flex-column align-items-center" href=message.author.url)
+                p(class=(message.author.account_status === 'member' ? 'username member' : message.author.account_status === 'admin' ? 'username admin' : 'username none')) #{message.author.username}
+                div(class=(message.author.account_status === 'member' ? 'my-2 profile-picture message-profile member' : message.author.account_status === 'admin' ? 'my-2 profile-picture message-profile admin' : 'my-2 profile-picture message-profile none') style=`background: url(${message.author.profile_picture}) no-repeat center; background-size: cover;`)
+            
+            p(class=(user=== undefined ? 'message-date hide' : 'message-date')) #{message.date_added}
             p(class="message-text") #{message.text}
-          button Delete if admin only
+
+          if user !== undefined && user.account_status === "admin"
+            button Delete if admin only
 
       else
         p Looks like there aren't any messages here... yet
