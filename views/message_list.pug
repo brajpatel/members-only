@@ -3,7 +3,7 @@ extends layout
 block content
   div
     h1 #{title}
-    ul(class="d-flex flex-wrap message-list")
+    ul(class="message-list")
       each message, index in message_list
         li(class="d-flex flex-column align-items-center p-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
           div(class="d-flex flex-column align-items-center")
