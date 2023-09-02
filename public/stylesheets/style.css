@@ -14,6 +14,10 @@ h1 {
   text-align: center;
 }
 
+button {
+  outline: none;
+}
+
 nav {
   box-shadow: 0 0 15px rgb(155, 155, 155);
   min-height: 80px;
@@ -321,6 +325,11 @@ form label {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.user-link,
+.user-link:hover {
+  text-decoration: none;
 }
 
 .message-profile {

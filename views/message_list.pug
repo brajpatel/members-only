@@ -13,7 +13,7 @@ block content
                 div(class=(message.author.account_status === 'member' ? 'my-2 profile-picture message-profile member' : message.author.account_status === 'admin' ? 'my-2 profile-picture message-profile admin' : 'my-2 profile-picture message-profile none') style=`background: url(${message.author.profile_picture}) no-repeat center; background-size: cover;`)
               
             else
-              a(class="d-flex flex-column align-items-center" href=message.author.url)
+              a(class="d-flex flex-column align-items-center user-link" href=message.author.url)
                 p(class=(message.author.account_status === 'member' ? 'username member' : message.author.account_status === 'admin' ? 'username admin' : 'username none')) #{message.author.username}
                 div(class=(message.author.account_status === 'member' ? 'my-2 profile-picture message-profile member' : message.author.account_status === 'admin' ? 'my-2 profile-picture message-profile admin' : 'my-2 profile-picture message-profile none') style=`background: url(${message.author.profile_picture}) no-repeat center; background-size: cover;`)
             
