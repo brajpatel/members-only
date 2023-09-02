@@ -20,7 +20,7 @@ button {
 
 nav {
   box-shadow: 0 0 15px rgb(155, 155, 155);
-  min-height: 80px;
+  height: 80px;
   background: white;
 }
 

@@ -26,7 +26,7 @@ block content
             p(class="message-text") #{message.text}
 
           if user !== undefined && user.account_status === "admin"
-            button Delete if admin only
+            a(href=message.url + '/delete') Delete if admin only
 
       else
         p Looks like there aren't any messages here... yet
