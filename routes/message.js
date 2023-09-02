@@ -13,8 +13,4 @@ router.get('/message/:id/delete', message_controller.message_delete_get);
 
 router.post('/message/:id/delete', message_controller.message_delete_post);
 
-router.get('/message/:id', function(req, res, next) {
-    res.render("message_detail", { title: "Message Detail" });
-});
-
 module.exports = router;

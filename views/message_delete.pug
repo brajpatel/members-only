@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 message-create-container")
+    p(class="h3 text-center") Are you sure you want to delete this message by #{message.author.username}?
+    p Date added: #{message.date_added}
+    p Message text: #{message.text}
+
+    form(class="d-flex flex-column" action="" method="POST")
+      input(id="message" name="message" value=message._id type="hidden")
+      button(class="my-3 delete-message-btn" type="submit") Delete Message

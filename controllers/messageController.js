@@ -47,6 +47,14 @@ exports.message_create_post = [
     })
 ]
 
-exports.message_delete_get = []
+exports.message_delete_get = asyncHandler(async (req, res, next) => {
+    if(req.user.account_status !== "admin") {
+        res.redirect('/');
+    }
+    else {
+        const message = await Message.findById(req.params.id).populate("author").exec();
+        res.render("message_delete", { user: req.user, message: message });
+    }
+})
 
 exports.message_delete_post = []
