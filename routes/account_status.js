@@ -6,8 +6,8 @@ router.get('/member', accountStatusController.become_member_get);
 
 router.post('/member', accountStatusController.become_member_post);
 
-router.get('/admin', function(req, res, next) {
-    res.render("become_admin", { title: "Become an admin", user: req.user });
-})
+router.get('/admin', accountStatusController.become_admin_get);
+
+router.post('/admin', accountStatusController.become_admin_post);
 
 module.exports = router;
