@@ -251,11 +251,17 @@ form label {
 .login-container,
 .sign-up-container,
 .message-create-container,
-.become-member-container {
+.become-member-container,
+.become-admin-container {
   box-shadow: 0 4px 15px rgb(177, 177, 177);
   border-radius: 10px;
   background: white;
   margin-top: 3rem;
+}
+
+.become-member-container,
+.become-admin-container {
+  max-width: 500px;
 }
 
 .login-container,
@@ -378,8 +384,4 @@ form label {
 .selected-user-profile {
   height: 250px;
   width: 250px;
-}
-
-.become-member-container {
-  max-width: 500px;
 }
