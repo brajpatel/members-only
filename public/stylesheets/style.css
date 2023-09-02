@@ -168,6 +168,10 @@ a.sign-out:hover {
   background: rgb(226, 13, 116);
 }
 
+.username.large {
+  font-size: 1.8rem;
+}
+
 .username.hide {
   color: #232323;
   background: #232323;

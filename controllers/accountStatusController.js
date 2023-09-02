@@ -1,6 +1,5 @@
 require("dotenv").config();
 const asyncHandler = require('express-async-handler');
-const passport = require('passport');
 const User = require('../models/user');
 
 exports.become_member_get = asyncHandler(async (req, res, next) => {
@@ -20,5 +19,3 @@ exports.become_member_post = asyncHandler(async (req, res, user) => {
         res.render("become_member", { title: "Try Again!", user: req.user });
     }
 })
-
-// member_password*1*2*3_____x
