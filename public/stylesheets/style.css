@@ -251,6 +251,7 @@ form label {
 .login-container,
 .sign-up-container,
 .message-create-container,
+.message-delete-container,
 .become-member-container,
 .become-admin-container {
   box-shadow: 0 4px 15px rgb(177, 177, 177);
@@ -259,9 +260,14 @@ form label {
   margin-top: 3rem;
 }
 
+.message-create-container,
 .become-member-container,
 .become-admin-container {
   max-width: 500px;
+}
+
+.message-delete-container {
+  max-width: 600px;
 }
 
 .login-container,
@@ -291,10 +297,6 @@ form label {
   background: rgb(99, 111, 199);
 }
 
-.message-create-container {
-  max-width: 500px;
-}
-
 .create-message-btn {
   color: white;
   background: rgb(70, 214, 104);
@@ -307,7 +309,7 @@ form label {
 
 .message-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-auto-rows: max-content;
   gap: 1.2rem;
 }
@@ -347,9 +349,14 @@ form label {
   width: 90px;
 }
 
+.message-details {
+  gap: 0.5rem;
+}
+
 .message-text {
   word-wrap: break-word;
   word-break: break-all;
+  font-size: 1.2rem;
 }
 
 .message-date {
@@ -365,6 +372,22 @@ form label {
 
 .message-date.hide::selection {
   color: #232323;
+}
+
+.delete-message {
+  width: max-content;
+  background: crimson;
+  color: white;
+  border-radius: 10px;
+  padding: 0.35rem 0.65rem;
+  outline: none;
+  border: 2px solid crimson;
+}
+
+.delete-message:hover {
+  background: rgb(216, 43, 78);
+  color: white;
+  text-decoration: none;
 }
 
 .user-detail {

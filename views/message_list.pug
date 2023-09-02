@@ -6,7 +6,7 @@ block content
     ul(class="message-list")
       each message, index in message_list
         li(class="d-flex flex-column align-items-center px-5 py-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
-          div(class="d-flex flex-column align-items-center")
+          div(class="d-flex flex-column align-items-center message-details")
             if user === undefined || (user !== undefined && user.account_status === "none")
               p(class="d-flex flex-column align-items-center")
                 p(class="username hide") #{message.author.username}
@@ -26,7 +26,7 @@ block content
             p(class="message-text") #{message.text}
 
           if user !== undefined && user.account_status === "admin"
-            a(href=message.url + '/delete') Delete if admin only
+            a(class="my-2 delete-message" href=message.url + '/delete') Delete message
 
       else
         p Looks like there aren't any messages here... yet
