@@ -57,4 +57,7 @@ exports.message_delete_get = asyncHandler(async (req, res, next) => {
     }
 })
 
-exports.message_delete_post = []
+exports.message_delete_post = asyncHandler(async (req, res, next) => {
+    await Message.findByIdAndRemove(req.body.messageid);
+    res.redirect('/');
+})

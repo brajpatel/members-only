@@ -356,7 +356,6 @@ form label {
 .message-text {
   word-wrap: break-word;
   word-break: break-all;
-  font-size: 1.2rem;
 }
 
 .message-date {

@@ -6,8 +6,8 @@ block content
     div(class="h5 text-center")
       p #[strong Message author:] #{message.author.username}
       p(class="my-2") #[strong Date added:] #{message.date_added}
-      p #[strong Message text:] #{message.text}
+      p(class="message-text") #[strong Message text:] #{message.text}
 
     form(class="d-flex flex-column align-items-center" action="" method="POST")
-      input(id="message" name="message" value=message._id type="hidden")
+      input(id="messageid" name="messageid" value=message._id type="hidden")
       button(class="my-2 delete-message" type="submit") Delete Message
