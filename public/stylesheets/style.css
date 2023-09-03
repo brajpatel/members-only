@@ -385,6 +385,7 @@ form label {
 }
 
 .user-detail {
+  height: calc(100vh - 150px);
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
@@ -392,7 +393,7 @@ form label {
 .user-info {
   width: max-content;
   gap: 1rem;
-  margin: 0 auto;
+  margin: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 0 8px 20px #a0a0a0;
@@ -401,4 +402,8 @@ form label {
 .selected-user-profile {
   height: 250px;
   width: 250px;
+}
+
+.selected-user-message-list {
+  overflow-y: auto;
 }
