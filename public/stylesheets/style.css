@@ -353,11 +353,6 @@ form label {
   gap: 0.5rem;
 }
 
-.message-text {
-  word-wrap: break-word;
-  word-break: break-all;
-}
-
 .message-date {
   color: #121212;
   border-radius: 10px;

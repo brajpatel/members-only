@@ -5,7 +5,13 @@ const Message = require('../models/message');
 exports.message_list = asyncHandler(async (req, res, next) => {
     const allMessages = await Message.find().populate("author").exec();
 
-    res.render('message_list', { title: "All Messages", user: req.user, message_list: allMessages });
+    let title = "All Messages";
+
+    if(allMessages.length === 0) {
+        title = "There are no messages!!!"
+    }
+
+    res.render('message_list', { title: title, user: req.user, message_list: allMessages });
 })
 
 exports.message_create_get = asyncHandler(async (req, res, next) => {

@@ -68,7 +68,7 @@ const accountStatusRouter = require('./routes/account_status');
 const app = express();
 
 app.use(function(req, res, next) {
-  res.locals.currentUser = req.user;
+  res.locals.user = req.user;
   next();
 })
 
