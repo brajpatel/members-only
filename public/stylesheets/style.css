@@ -145,13 +145,13 @@ a.login:hover {
 }
 
 a.sign-up,
-a.sign-out {
+a.logout {
   color: #121212;
   border: 2px solid #121212;
 }
 
 a.sign-up:hover,
-a.sign-out:hover {
+a.logout:hover {
   background: #eaebea;
 }
 
@@ -192,7 +192,7 @@ a.sign-out:hover {
   color: #232323;
 }
 
-.sign-out {
+.logout {
   width: max-content;
   background: white;
   position: absolute;
@@ -203,7 +203,7 @@ a.sign-out:hover {
   transition: 0.3s ease;
 }
 
-.profile-container:hover .sign-out {
+.profile-container:hover .logout {
   pointer-events: auto;
   opacity: 1;
 }

@@ -38,7 +38,7 @@ html(lang='en')
             div(class="d-flex align-items-center position-relative profile-container")
               p(class=(user.account_status === 'member' ? 'username member' : user.account_status === 'admin' ? 'username admin' : 'username none')) #{user.display_name}
               div(class=(user.account_status === 'member' ? 'profile-picture avatar member' : user.account_status === 'admin' ? 'profile-picture avatar admin' : 'profile-picture avatar none') style=`background: url(${user.profile_picture}) no-repeat center; background-size: cover;`)
-              a(href="/logout" class="account-link sign-out") Logout
+              a(href="/logout" class="account-link logout") Logout
                 i(class="fa-solid fa-right-from-bracket")
 
       div(class="px-4 py-3")
