@@ -45,6 +45,16 @@ nav {
   width: 100%;
 }
 
+.return-btn {
+  display: none;
+  transform: scaleX(-1);
+  transition: 0.3s ease;
+}
+
+.return-btn:hover {
+  color: gold;
+}
+
 nav a {
   display: flex;
   justify-content: center;
@@ -436,5 +446,9 @@ form label {
 @media(max-width: 650px) {
   .app-title {
     display: none;
+  }
+
+  .return-btn {
+    display: block;
   }
 }
