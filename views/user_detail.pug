@@ -5,9 +5,9 @@ block content
     div(class="d-flex flex-column align-items-center p-4 user-info")
       h1(class=(selectedUser.account_status === 'member' ? 'username large member' : selectedUser.account_status === 'admin' ? 'username large admin' : 'username large none')) #{selectedUser.username}
       div(class=(selectedUser.account_status === 'member' ? 'profile-picture selected-user-profile member' : selectedUser.account_status === 'admin' ? 'profile-picture selected-user-profile admin' : 'profile-picture selected-user-profile none') style=`background: url(${selectedUser.profile_picture}) no-repeat center; background-size: cover;`)
-      p Number of messages: #{message_list.length}
+      p(class="h5") Number of messages: #{message_list.length}
 
-    ul(class="p-3 message-list selected-user-message-list")
+    ul(class="p-3 selected-user-message-list")
       each message, index in message_list
         li(class="d-flex flex-column align-items-center p-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
           div(class="d-flex flex-column align-items-center h5")

@@ -405,5 +405,25 @@ form label {
 }
 
 .selected-user-message-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-auto-rows: max-content;
+  gap: 1.2rem;
   overflow-y: auto;
+}
+
+@media(max-width: 880px) {
+  .user-detail,
+  .selected-user-message-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-detail {
+    height: auto;
+  }
+
+  .selected-user-message-list {
+    overflow: visible;
+  }
 }
