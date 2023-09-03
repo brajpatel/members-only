@@ -15,4 +15,6 @@ block content
             p(class="h2") #{message.author.username}
             p #{message.date_added}
             p(class="message-text") #{message.text}
-          button Delete if admin only
+          
+          if user !== undefined && user.account_status === "admin"
+            a(class="my-2 delete-message" href=message.url + '/delete') Delete message
