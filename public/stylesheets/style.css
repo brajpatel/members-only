@@ -451,4 +451,9 @@ form label {
   .return-btn {
     display: block;
   }
+
+  .logout {
+    position: relative;
+    opacity: 1;
+  }
 }
