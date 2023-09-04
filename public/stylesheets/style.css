@@ -452,6 +452,18 @@ form label {
     display: block;
   }
 
+  .profile-container > .username {
+    position: absolute;
+    bottom: -72.5%;
+    left: -25%;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .profile-container:hover > .username {
+    opacity: 1;
+  }
+
   .logout {
     position: relative;
     opacity: 1;
