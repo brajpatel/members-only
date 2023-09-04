@@ -2,7 +2,10 @@ extends layout
 
 block content
   div(class="d-flex flex-column align-items-center mx-auto px-4 py-3 message-create-container")
-    if user
+    if user === undefined
+      h1 Oops... It doesn't look like you're logged in anymore!
+
+    else
       h1(class="form-title")= title
       form(class="d-flex flex-column" action="" method="POST")
         label(for="message") #[strong Message]
@@ -11,6 +14,3 @@ block content
         input(id="author" name="author" value=user._id type="hidden")
 
         button(class="my-3 create-message-btn" type="submit") Create Message
-
-    else
-      h1 You need to be signed in to create messages

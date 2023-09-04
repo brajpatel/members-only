@@ -2,17 +2,21 @@ extends layout
 
 block content
   div(class="user-detail")
-    div(class="d-flex flex-column align-items-center p-4 user-info")
-      h1(class=(selectedUser.account_status === 'member' ? 'username large member' : selectedUser.account_status === 'admin' ? 'username large admin' : 'username large none')) #{selectedUser.username}
-      div(class=(selectedUser.account_status === 'member' ? 'profile-picture selected-user-profile member' : selectedUser.account_status === 'admin' ? 'profile-picture selected-user-profile admin' : 'profile-picture selected-user-profile none') style=`background: url(${selectedUser.profile_picture}) no-repeat center; background-size: cover;`)
-      p(class="h5") Number of messages: #{message_list.length}
+    if user === undefined
+      h1 Oops... It doesn't look like you're logged in anymore!
 
-    ul(class="p-3 selected-user-message-list")
-      each message, index in message_list
-        li(class="d-flex flex-column align-items-center p-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
-          div(class="d-flex flex-column align-items-center h5")
-            p(class="my-2") #[strong Date added:] #{message.date_added}
-            p(class="message-text") #[strong Message text:] #{message.text}
-          
-          if user !== undefined && user.account_status === "admin"
-            a(class="my-2 delete-message" href=message.url + '/delete') Delete message
+    else
+      div(class="d-flex flex-column align-items-center p-4 user-info")
+        h1(class=(selectedUser.account_status === 'member' ? 'username large member' : selectedUser.account_status === 'admin' ? 'username large admin' : 'username large none')) #{selectedUser.username}
+        div(class=(selectedUser.account_status === 'member' ? 'profile-picture selected-user-profile member' : selectedUser.account_status === 'admin' ? 'profile-picture selected-user-profile admin' : 'profile-picture selected-user-profile none') style=`background: url(${selectedUser.profile_picture}) no-repeat center; background-size: cover;`)
+        p(class="h5") #[strong Number of messages:] #{message_list.length}
+
+      ul(class="p-3 selected-user-message-list")
+        each message, index in message_list
+          li(class="d-flex flex-column align-items-center p-4 text-center message-card cascade-fade-in" style=`--delay: ${index + 1}`)
+            div(class="d-flex flex-column align-items-center h5")
+              p(class="my-2") #[strong Date added:] #{message.date_added}
+              p(class="message-text") #[strong Message text:] #{message.text}
+            
+            if user !== undefined && user.account_status === "admin"
+              a(class="my-2 delete-message" href=message.url + '/delete') Delete message
