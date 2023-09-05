@@ -9,7 +9,6 @@ const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require('compression');
-const helmet = require('helmet');
 const RateLimit = require('express-rate-limit');
 
 const mongoose = require("mongoose");
@@ -73,14 +72,6 @@ app.use(function(req, res, next) {
 })
 
 app.use(compression());
-
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"]
-    }
-  })
-)
 
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000,
