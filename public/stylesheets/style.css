@@ -22,6 +22,9 @@ nav {
   box-shadow: 0 0 15px rgb(155, 155, 155);
   height: 80px;
   background: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .app-title {
