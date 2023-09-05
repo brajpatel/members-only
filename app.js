@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require('compression');
+const helmet = require('helmet');
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -67,6 +68,14 @@ app.use(function(req, res, next) {
 })
 
 app.use(compression());
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"]
+    }
+  })
+)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
