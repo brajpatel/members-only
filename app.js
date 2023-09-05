@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require('compression');
 const helmet = require('helmet');
+const RateLimit = require('express-rate-limit');
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -62,6 +63,10 @@ passport.deserializeUser(async function(id, done) {
 
 const app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
@@ -77,9 +82,12 @@ app.use(
   })
 )
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 20
+})
+
+app.use(limiter);
 
 const messageRouter = require('./routes/message');
 const loginRouter = require('./routes/login');
