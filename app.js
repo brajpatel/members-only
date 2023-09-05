@@ -8,6 +8,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const compression = require('compression');
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -58,13 +59,6 @@ passport.deserializeUser(async function(id, done) {
   }
 })
 
-const messageRouter = require('./routes/message');
-const loginRouter = require('./routes/login');
-const logoutRouter = require('./routes/logout');
-const signUpRouter = require('./routes/sign_up');
-const userRouter = require('./routes/user');
-const accountStatusRouter = require('./routes/account_status');
-
 const app = express();
 
 app.use(function(req, res, next) {
@@ -72,9 +66,18 @@ app.use(function(req, res, next) {
   next();
 })
 
+app.use(compression());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+const messageRouter = require('./routes/message');
+const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
+const signUpRouter = require('./routes/sign_up');
+const userRouter = require('./routes/user');
+const accountStatusRouter = require('./routes/account_status');
 
 app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
