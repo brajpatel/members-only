@@ -455,6 +455,10 @@ form label {
     display: block;
   }
 
+  .nav-links {
+    gap: 0.45rem;
+  }
+
   .profile-container > .username {
     position: absolute;
     bottom: -72.5%;
