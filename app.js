@@ -8,6 +8,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const favicon = require('serve-favicon');
 const compression = require('compression');
 const RateLimit = require('express-rate-limit');
 
@@ -61,6 +62,8 @@ passport.deserializeUser(async function(id, done) {
 })
 
 const app = express();
+
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
