@@ -196,19 +196,10 @@ a.logout:hover {
 }
 
 .logout {
+  min-height: 50px;
   width: max-content;
   background: white;
-  position: absolute;
-  bottom: -72.5%;
-  right: 0;
-  pointer-events: none;
-  opacity: 0;
   transition: 0.3s ease;
-}
-
-.profile-container:hover .logout {
-  pointer-events: auto;
-  opacity: 1;
 }
 
 .profile-picture {
@@ -468,11 +459,6 @@ form label {
   }
 
   .profile-container:hover > .username {
-    opacity: 1;
-  }
-
-  .logout {
-    position: relative;
     opacity: 1;
   }
 }
