@@ -196,7 +196,7 @@ a.logout:hover {
 }
 
 .logout {
-  min-height: 50px;
+  min-height: 42.5px;
   width: max-content;
   background: white;
   transition: 0.3s ease;
