@@ -8,7 +8,9 @@ This app was created for The Odin Project's [authentication](https://www.theodin
 - giving users different abilities and permissions
 </br></br>
 ## About
-Some of the main features of this project include being able to view and create messages, sign up and login with an account, and upgrade the status of your account to gain additional permissions. While signed out, you are limited to only viewing messages with their author and date hidden. While signed in, the details of the messages are still hidden, but the user can create new messages to add to the board. By getting the password (at the bottom of the readme) correct, you can become a member and gain the ability to see the full details of the messages. You will also then have the opportunity to become an admin. Admins have all of the previous abilites with the addition of being able to delete messages. The status of each account is distinguished by their own colors (blue - non-member, gold - member, crimson - admin).
+Some of the main features of this project include being able to view and create messages, sign up and login with an account, and upgrade the status of your account to gain additional permissions. While signed out, you are limited to only viewing messages with their author and date hidden. While signed in, the details of the messages are still hidden, but the user can create new messages to add to the board.
+</br></br>
+By getting the password (at the bottom of the readme) correct, you can become a member and gain the ability to see the full details of the messages. You will also then have the opportunity to become an admin. Admins have all of the previous abilites with the addition of being able to delete messages. The status of each account is distinguished by their own colors (blue - non-member, gold - member, crimson - admin).
 </br></br>
 These are some of the challenges I faced while making this project:
 - giving different users different permissions based on the status of their account (E.g. being able to see the author and date of messages, deleting a message etc.)
